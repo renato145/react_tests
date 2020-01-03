@@ -1,0 +1,10 @@
+https://www.who.int/healthinfo/statistics/documentation.zip
+https://www.who.int/healthinfo/statistics/availability.zip
+https://www.who.int/healthinfo/statistics/country_codes.zip
+https://www.who.int/healthinfo/statistics/notes.zip
+https://www.who.int/healthinfo/pop.zip
+https://www.who.int/healthinfo/statistics/morticd07.zip
+https://www.who.int/healthinfo/statistics/morticd08.zip
+https://www.who.int/healthinfo/statistics/morticd9.zip
+https://www.who.int/healthinfo/statistics/Morticd10_part1.zip
+https://www.who.int/healthinfo/statistics/Morticd10_part2.zip
