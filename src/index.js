@@ -1,38 +1,53 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { useAuData } from './useAuData';
 const d3 = require('d3');
 
+const width = 960;
+const height = 500;
+
+const Test = ({ data, age }) => {
+  const filteredData = useMemo(() => ( data.filter(d => d.Age===age) ), [data, age]);
+  return (
+    <div>
+      {filteredData.map((d,i) => (
+        <div key={i}>{d.Year} {d.Sex} {d.n}</div>
+      ))}
+    </div>
+  );
+}
+
 const App = () => {
   const data = useAuData();
+  const [ age, setAge ] = useState('');
+
+  useEffect(() => {
+    if(data){
+      setAge('All ages');
+    }
+  }, [data]);
+
   if(!data){
     return <pre>Loading...</pre>;
   }
   const { allData, years, sexs, ages } = data;
-  console.log(allData[0]);
-  console.log(sexs);
-  console.log(ages);
+
   return (
     <div>
-      <div>
-        <h1>Year</h1>
-        {years.map(d => (
-          <span>{d}<br /></span>
-        ))}
+      <div className="title">Skin cancer on Australia</div>
+      <div className="selector">
+        <label>Age</label>
+        <select onChange={e => setAge(e.target.value)} value={age}>
+          {ages.map(d => (
+            <option key={d} value={d}>{d}</option>
+          ))}
+        </select>
       </div>
-      <div>
-        <h1>Sex</h1>
-        {sexs.map(d => (
-          <span>{d}<br /></span>
-        ))}
-      </div>
-      <div>
-        <h1>Age</h1>
-        {ages.map(d => (
-          <span>{d}<br /></span>
-        ))}
-      </div>
+      <Test data={allData} age={age} />
+      <div>Query: {age}</div>
+      <svg width={width} height={height}>
+      </svg>
     </div>
   );
 };
