@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React, { useState, useEffect, useMemo } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -52,16 +53,19 @@ const App = () => {
 
   return (
     <div>
-      <div className="title">Skin cancer on Australia</div>
-      <div className="selector">
-        <label>Age</label>
-        <select onChange={e => setAge(e.target.value)} value={age}>
+      <div className='title'>Skin cancer on Australia</div>
+      <div className='container form-group row row-cols-2'>
+        <label className='col-md-1'>Age</label>
+        <select
+          className='form-control col-md-4'
+          onChange={e => setAge(e.target.value)}
+          value={age}
+        >
           {ages.map(d => (
             <option key={d} value={d}>{d}</option>
           ))}
         </select>
       </div>
-      <div>Query: {age}</div>
       <svg width={width} height={height}>
         <g transform={`translate(${margin.left},${margin.top})`}>
           <AxisBottom

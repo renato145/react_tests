@@ -1,6 +1,69 @@
+body {
+  font-family: sans-serif;
+}
+
 .title {
+  font-size: 2em;
+  text-align: center;
+}
+
+.container label {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: right;
+}
+
+pre {
+  font-size: 7em;
+}
+
+.marks path {
+  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.Male {
+  stroke: rgb(11, 106, 184);
+}
+
+.Female {
+  stroke: rgb(187, 40, 40);
+}
+
+.axis-label {
+  font-size: 1.5em;
+  fill: #635F5D;
 }
 
 /* body {
   transition: all 0.2s ease-out;
+} */
+
+/* body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+pre {
+  font-size: 7em;
+}
+.tick line {
+  stroke: #C0C0BB;
+}
+.tick text {
+  fill: #635F5D;
+}
+.marks circle {
+  fill: #137B80;
+}
+.marks path {
+  stroke: #137B80;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.axis-label {
+  font-size: 2.5em;
+  fill: #635F5D;
 } */
